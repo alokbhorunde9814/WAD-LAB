@@ -1,0 +1,47 @@
+<h1 class="title">User Management System</h1>
+
+<!-- Registration Form (Shown only if user is NOT logged in) -->
+<div class="form-container" *ngIf="!isLoggedIn">
+  <h2>Register</h2>
+  <form>
+    <input type="text" #name placeholder="Enter Your Name" required><br>
+    <input type="text" #address placeholder="Enter Your Address" required><br>
+    <input type="text" #contact placeholder="Enter Your Contact" required><br>
+    <input type="email" #email placeholder="Enter Your Email" required><br>
+    <input type="password" #password placeholder="Enter Your Password" required><br>
+    <button type="button" (click)="register(name.value, address.value, contact.value, email.value, password.value)">
+      Register
+    </button>
+  </form>
+</div>
+
+<!-- Login Form (Shown only if user is NOT logged in) -->
+<div class="form-container" *ngIf="!isLoggedIn">
+  <h2>Login</h2>
+  <form>
+    <input type="email" #loginEmail placeholder="Enter Your Email" required><br>
+    <input type="password" #loginPassword placeholder="Enter Your Password" required><br>
+    <button type="button" (click)="login(loginEmail.value, loginPassword.value)">Login</button>
+  </form>
+</div>
+
+<!-- Profile Section (Shown only if user IS logged in) -->
+<div class="profile-container" *ngIf="isLoggedIn">
+  <h2>Profile</h2>
+  <p><strong>Name:</strong> {{ user.name }}</p>
+  <p><strong>Address:</strong> {{ user.address }}</p>
+  <p><strong>Contact:</strong> {{ user.contact }}</p>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+  <button (click)="logout()">Logout</button>
+</div>
+
+<!-- Styles -->
+<style>
+  .title { text-align: center; color: #2c3e50; }
+  .form-container, .profile-container {
+    width: 300px; margin: 20px auto; padding: 20px;
+    border: 1px solid #ddd; border-radius: 5px; text-align: center;
+  }
+  input { width: 90%; padding: 8px; margin: 5px 0; }
+  button { background-color: #3498db; color: white; padding: 10px; border: none; cursor: pointer; }
+</style> 
