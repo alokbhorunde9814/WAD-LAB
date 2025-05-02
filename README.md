@@ -1,3 +1,4 @@
+https://chatgpt.com/share/68142cab-0624-800b-aa16-e4a53bf98c3d
 # WAD LAB Assignments
 
 This repository contains all Web Application Development (WAD) lab assignments, organized by assignment number and part. Each folder contains the code and resources for a specific assignment. Below is a detailed description of each assignment and its contents.
